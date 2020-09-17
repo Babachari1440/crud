@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic table</title>
+</head>
+<body>
+    <center>
+<h1>Enter the values to update into the table</h1>
+<form method="POST">
+    {% csrf_token %}
+ name:   
+ <input type="text" name="name" id="name">
+ <br>
+ url:
+ <input type="url" name="url" id="url">
+ <br>
+ <input type="submit" value="submit">
+
+
+
+
+</form>
+
+
+    </center>
+</body>
+</html>

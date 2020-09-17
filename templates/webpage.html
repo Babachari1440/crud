@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage table</title>
+</head>
+<body>
+    <center>
+<h1>Enter the values to insert into the webpage model</h1>
+{% if topics %}
+
+
+<form method="POST">
+    {% csrf_token %}
+ topic_name:   
+ <select  name="topic_name" id="topic_name">
+     {% for topic in topics%}
+     <option value="topic">{{topic.topic_name}}</option>
+     {% endfor %}
+     </select>
+ <br>
+ <br>
+ <br>
+ <br>
+ name:
+ <input type="text" name="name" id="name">
+ <br>
+ <br>
+ <br>
+ <br>
+ url:
+ <input type="url" name="url" id="url">
+ <br>
+ <br>
+ <br>
+ <br>
+submit:
+<input type="submit" value="submit">
+
+
+</form>
+{% else %}
+<h1>First insert some data into your Topic model</h1>
+{% endif %}
+    </center>
+</body>
+</html>

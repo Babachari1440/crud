@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage table</title>
+</head>
+<body>
+    <center>
+<h1>Enter the values to insert into the access_records model</h1>
+{% if webpages %}
+
+
+<form method="POST">
+    {% csrf_token %}
+ name:   
+ <select  name="name" id="name">
+     {% for webpage in webpages %}
+     <option value={{webpage}}>{{webpage.name}}</option>
+     {% endfor %}
+     </select>
+ <br>
+ <br>
+ <br>
+ <br>
+
+ date:
+ <input type="date" name="date" id="date">
+ <br>
+ <br>
+ <br>
+ <br>
+submit:
+<input type="submit" value="submit">
+
+
+</form>
+{% else %}
+<h1>First insert some data into your access_records model</h1>
+{% endif %}
+    </center>
+</body>
+</html>
